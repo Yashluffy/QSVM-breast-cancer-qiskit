@@ -1,19 +1,50 @@
-# Quantum Support Vector Machine
-This repository contains a basic implementation of a Quantum Support Vector Machine (QSVM) for binary classification.
+# 🧠 Quantum SVM with Qiskit – Breast Cancer Classification
 
-The QSVM algorithm takes the classical machine learning algorithm and performs the support vector machine on a quantum circuit in order to be efficiently processed on a quantum computer.
+This project implements a **Quantum Support Vector Machine (QSVM)** using [Qiskit](https://qiskit.org/) to classify tumors as malignant or benign using the **Breast Cancer dataset** from scikit-learn.
 
-The QSVM module from Qiskit Aqua, was trained on two datasets, one ad-hoc and another real-world dataset for breast cancer.
+Quantum SVMs use quantum circuits to compute a kernel matrix, which is then used in a classical SVM to perform classification.
 
-Below is a dimensionally reduced (via PCA) plot of the breast cancer dataset alongside the learned kernel used to perform binary classificatio using support vector mechanism.
-<p align="center">
-<img src="https://github.com/GlazeDonuts/QSVM/blob/master/resources/bcancer.png?raw=True"/>
-<img src="https://github.com/GlazeDonuts/QSVM/blob/master/resources/kernel.png?raw=True"/>
-</p>
+---
 
-Accuracies more than 99% were achieved.
+## 📊 Dataset
 
+- **Name**: Breast Cancer Wisconsin Diagnostic Dataset
+- **Source**: `sklearn.datasets.load_breast_cancer()`
+- **Type**: Binary classification (Malignant vs Benign)
+- **Features**: 30 numerical attributes
 
-### References
-* [Qiskit Aqua Documentation](https://qiskit.org/documentation/stubs/qiskit.aqua.algorithms.QSVM.html)
-* [Qiskit Community Tutorials](https://github.com/qiskit-community/qiskit-community-tutorials)
+---
+
+## ⚙️ Technologies Used
+
+- [Qiskit](https://qiskit.org/)
+- Qiskit Machine Learning module
+- Scikit-learn
+- Matplotlib
+- Jupyter Notebook / Google Colab
+
+---
+
+## 🧪 How It Works
+
+1. Load and normalize the dataset
+2. Use `ZZFeatureMap` to map features to quantum circuits
+3. Construct a `QuantumKernel` using Qiskit
+4. Train a classical `SVC(kernel='precomputed')` on quantum kernel
+5. Evaluate classification accuracy
+
+---
+
+## 📈 Results
+
+The quantum SVM achieved **~99% accuracy** on the test set.
+
+---
+
+## ▶️ How to Run (Colab Friendly)
+
+1. Open this notebook in Google Colab  
+2. Run the first cell to install dependencies:
+
+```python
+!pip install "qiskit[all]" qiskit-machine-learning scikit-learn matplotlib --quiet
