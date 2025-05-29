@@ -40,11 +40,3 @@ Quantum SVMs use quantum circuits to compute a kernel matrix, which is then used
 The quantum SVM achieved **~99% accuracy** on the test set.
 
 ---
-
-## ▶️ How to Run (Colab Friendly)
-
-1. Open this notebook in Google Colab  
-2. Run the first cell to install dependencies:
-
-```python
-!pip install "qiskit[all]" qiskit-machine-learning scikit-learn matplotlib --quiet
